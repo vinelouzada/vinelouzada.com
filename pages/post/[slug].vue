@@ -16,6 +16,11 @@
 
 const route = useRoute()
 const post = await queryContent('posts').where({'slug': { $eq: route.params.slug }}).findOne();
+
+useHead({
+    title: `${post.title} • vinelouzada`
+})
+
 </script>
   
 

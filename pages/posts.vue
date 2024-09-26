@@ -24,6 +24,10 @@ import CardPost from '~/components/CardPost.vue';
 
 const posts = await queryContent('posts').find();
 
+useHead({
+    title: `Posts • vinelouzada`
+})
+
 </script>
 
 

@@ -9,6 +9,13 @@ import Footer from './components/Footer.vue';
 import Header from './components/Header.vue';
 
 
+useSeoMeta({
+  title: 'vinelouzada',
+  ogTitle: 'vinelouzada',
+  description: 'Nesse blog eu conto sobre mim e tecnologias.',
+  ogDescription: 'Nesse blog eu conto sobre mim e tecnologias.'
+});
+
 
 </script>
 
