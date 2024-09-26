@@ -7,5 +7,12 @@ export default defineNuxtConfig({
     '/': { prerender: true }
   },
 
+  content: {
+    highlight: {
+        theme: 'one-dark-pro',
+        langs: ["java", "php"]
+      }
+    },
+
   compatibilityDate: '2024-09-25'
 })

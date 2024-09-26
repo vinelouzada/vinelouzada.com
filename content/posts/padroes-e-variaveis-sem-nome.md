@@ -15,7 +15,7 @@ Para resolver esse problema, o Java 22 trouxe uma novidade bem interessante: [Un
 
 O exemplo abaixo mostra um código de tratamento de exceção, onde a variável da exceção não está sendo utilizada:
 
-```java
+```java[Main.java] meta-info=val
         String valor1 = "vinicius";
         try{
             Integer.parseInt(valor1);

@@ -1,24 +1,44 @@
 <template>
-    <div>
-      <h1>Posts</h1>
-        <ContentRenderer :value="post" />
-    </div>
-  </template>
+      <main>
+        <section class="content">
+            <div class="banner-post">
+              <img :src="`/assets/img/${post.banner}`">
+            </div>
+            <article>
+                <h2>{{post.title}}</h2>
+                <ContentRendererMarkdown :value="post" />
+            </article>
+        </section>
+      </main>
+</template>
   
-  <script setup>
+<script setup>
 
 const route = useRoute()
-
-// When accessing /posts/1, route.params.id will be 1
-console.log(route.params.slug)
 const post = await queryContent('posts').where({'slug': { $eq: route.params.slug }}).findOne();
-
-console.log(post)
-
-  //const posts  = await useAsyncData('home', () => queryContent('post').find())
-
-
-
-
-  </script>
+</script>
   
+
+<style>
+
+pre{
+  background-color: #141414;
+  padding: 10px;
+  border-radius: 10px;
+  overflow-x: auto; /* Habilita a rolagem horizontal */
+}
+
+.banner-post{
+  width: 100%;
+  height: 200px;
+  margin-top: 20px;
+}
+
+.banner-post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+</style>

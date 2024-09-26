@@ -1,22 +1,65 @@
 <template>
-    <div>
-      <h1>Posts</h1>
-      <ul>
-        <li v-for="post in posts" :key="post.slug">
-          <nuxt-link :to="`/post/${post.slug}`">{{ post.title }}</nuxt-link>
-        </li>
-      </ul>
-    </div>
-  </template>
+      <main>
+            <section class="section-posts">
+                <div>
+                    <h2>Posts</h2>
+                </div>
+                <ul>
+                    <li v-for="post in posts" :key="post.id">
+                            <CardPost
+                            :slug="post.slug" 
+                            :title="post.title"
+                            :date="post.date"
+                            :abstract="post.abstract"
+                            :banner="post.banner"
+                            />
+                    </li>
+                </ul>
+            </section>
+        </main>
+</template>
   
-  <script setup>
+<script setup>
+import CardPost from '~/components/CardPost.vue';
 
-  const posts = await queryContent('posts').find();
+const posts = await queryContent('posts').find();
 
-  //const posts  = await useAsyncData('home', () => queryContent('post').find())
-
-  console.log(posts);
+</script>
 
 
-  </script>
-  
+<style scoped>
+
+.layout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    margin: 0 auto;
+    width: 75%;
+    flex: 1;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.section-posts{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+.section-posts ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+</style>
