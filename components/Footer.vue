@@ -21,7 +21,9 @@ export default {
 
 <style scoped>
 
-
+h3, p{
+    text-align: center;
+}
 h3{
     color: #fff;
     font-size: 24px;

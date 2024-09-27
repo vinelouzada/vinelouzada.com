@@ -74,4 +74,12 @@ h2 {
     font-weight: bold;
     margin: 20px 0;
 }
+
+@media (max-width: 750px) {
+  .content {
+    width: 90%;
+  }
+}
+
+
 </style>

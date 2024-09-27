@@ -35,6 +35,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .title{
@@ -44,6 +45,13 @@ export default {
 
 .description{
     color: white;
+}
+
+@media (max-width: 430px) {
+  .container-banner-text{
+    width: 85%;
+    margin: 0 auto;
+  }
 }
 
 </style>

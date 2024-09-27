@@ -43,6 +43,7 @@ export default {
     width: 900px;
     display: flex;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 .card-project-image{
@@ -54,7 +55,6 @@ export default {
 .card-project-image img{
     width: 250px;
     height: 250px;
-    margin: 15px;
 }
 
 .card-project-description{
@@ -85,5 +85,11 @@ h3{
 
 .button-project:hover {
     background-color: #18181B;
+}
+
+@media (max-width: 1100px){
+    .container-card-project {
+        gap: 0;
+    }
 }
 </style>
