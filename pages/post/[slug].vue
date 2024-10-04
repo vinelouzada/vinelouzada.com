@@ -30,7 +30,8 @@ pre{
   background-color: #141414;
   padding: 10px;
   border-radius: 10px;
-  overflow-x: auto; /* Habilita a rolagem horizontal */
+  overflow-x: auto;
+  margin: 10px 0;
 }
 
 .banner-post{
@@ -43,6 +44,11 @@ pre{
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+h2 a{
+  text-decoration: none;
+  color: #000;
 }
 
 

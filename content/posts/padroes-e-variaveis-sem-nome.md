@@ -44,15 +44,21 @@ Outro caso de uso é ao trabalhar com funções lambda. Veja o exemplo abaixo, o
 
 ```java
         List<String>  names = List.of("Vinícius", "Maria Luíza", "Jill");
-        Map<String, String> students =  names.stream().collect(Collectors.toMap(String::toLowerCase, name -> "MATRICULADO"));
-
+        Map<String, String> students = names.stream()
+                .collect(Collectors.toMap(
+                    String::toLowerCase, 
+                    name -> "MATRICULADO"
+                ));
 ```
 
 Nesse caso, o código pode ser simplificado também utilizando o operador `_`:
 
 ```java
-        Map<String, String> students =  names.stream().collect(Collectors.toMap(String::toLowerCase, _ -> "MATRICULADO"));
-
+        Map<String, String> students = names.stream()
+                    .collect(Collectors.toMap(
+                        String::toLowerCase, 
+                        _ -> "MATRICULADO"
+                    ));
 ```
 
 Assim, a funcionalidade permanece intacta: pegamos a lista, transformamos em um mapa, onde os nomes são as chaves em letras minúsculas, e todos os valores são “MATRICULADO”.
