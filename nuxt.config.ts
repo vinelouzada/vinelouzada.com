@@ -14,5 +14,13 @@ export default defineNuxtConfig({
       }
     },
 
+  app: {
+    head: {
+      link: [
+          { rel: 'icon', type: 'image/x-icon', href: '/assets/img/logo.png' }
+        ]
+      }
+    },
+
   compatibilityDate: '2024-09-25'
 })
