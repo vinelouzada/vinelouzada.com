@@ -12,8 +12,8 @@ import Header from './components/Header.vue';
 useSeoMeta({
   title: 'vinelouzada',
   ogTitle: 'vinelouzada',
-  description: 'Nesse blog eu conto sobre mim e tecnologias.',
-  ogDescription: 'Nesse blog eu conto sobre mim e tecnologias.'
+  description: 'Aprenda sobre programação e tecnologias relacionadas.',
+  ogDescription: 'Aprenda sobre programação e tecnologias relacionadas.'
 });
 
 

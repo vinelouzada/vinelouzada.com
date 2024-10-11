@@ -21,6 +21,14 @@ useHead({
     title: `${post.title} • vinelouzada`
 })
 
+useSeoMeta({
+  title: `${post.title}`,
+  ogTitle: `${post.title}`,
+  description: `${post.description}`,
+  ogDescription: `${post.description}`,
+  ogImage: `/assets/img/${post.banner}`
+})
+
 </script>
   
 
