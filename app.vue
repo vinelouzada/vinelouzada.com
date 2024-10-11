@@ -13,7 +13,8 @@ useSeoMeta({
   title: 'vinelouzada',
   ogTitle: 'vinelouzada',
   description: 'Aprenda sobre programação e tecnologias relacionadas.',
-  ogDescription: 'Aprenda sobre programação e tecnologias relacionadas.'
+  ogDescription: 'Aprenda sobre programação e tecnologias relacionadas.',
+  ogImage: '/assets/img/banner.jpg/'
 });
 
 
