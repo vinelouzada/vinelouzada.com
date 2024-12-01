@@ -1,6 +1,6 @@
 <template>
       <main>
-        <section class="content">
+        <section class="content-post">
             <div class="banner-post">
               <img :src="`/assets/img/${post.banner}`">
             </div>
@@ -34,6 +34,13 @@ useSeoMeta({
 
 <style>
 
+.content-post {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  width: 50%;
+}
+
 pre{
   background-color: #141414;
   padding: 10px;
@@ -57,6 +64,12 @@ pre{
 h2 a{
   text-decoration: none;
   color: #000;
+}
+
+@media (max-width: 750px) {
+  .content-post {
+    width: 90%;
+  }
 }
 
 
