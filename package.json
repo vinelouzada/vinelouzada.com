@@ -8,11 +8,15 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "@nuxt/content": "^2.13.2",
-    "@nuxtjs/mdc": "^0.9.0",
+    "@nuxt/content": "^2.13.4",
+    "@nuxtjs/mdc": "^0.20.1",
     "moment": "^2.30.1",
-    "nuxt": "^3.13.0",
+    "nuxt": "^3.21.1",
     "prismjs": "^1.29.0"
+  },
+  "resolutions": {
+    "@nuxtjs/mdc": "^0.20.1",
+    "minimatch": "^10.2.1"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
