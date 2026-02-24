@@ -61,9 +61,9 @@ h2 {
 
 .section-posts ul {
     display: flex;
-    justify-content: space-between;
     list-style: none;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 </style>
