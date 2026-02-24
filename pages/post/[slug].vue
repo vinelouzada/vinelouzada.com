@@ -41,6 +41,11 @@ useSeoMeta({
   width: 50%;
 }
 
+.content-post p{
+  line-height: 1.8;
+  margin-bottom: 1em;
+}
+
 pre{
   background-color: #141414;
   padding: 10px;
@@ -64,6 +69,18 @@ pre{
 h2 a{
   text-decoration: none;
   color: #000;
+}
+
+blockquote {
+  border-left: 3px solid #333;
+  padding: 12px 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: #444;
+}
+
+blockquote p {
+  margin: 0;
 }
 
 @media (max-width: 750px) {

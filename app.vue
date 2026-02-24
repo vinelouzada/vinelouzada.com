@@ -65,9 +65,9 @@ main {
 
 .section-latest-articles ul {
     display: flex;
-    justify-content: space-between;
     list-style: none;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 h2 {
