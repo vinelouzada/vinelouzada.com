@@ -1,6 +1,6 @@
 <template>
   <section id="experiencia" class="experience-section">
-    <div class="experience-container">
+    <div class="container">
       <div class="reveal">
         <span class="section-tag">Trajetória</span>
         <h2>Experiência <em>Profissional</em></h2>
@@ -124,13 +124,8 @@ const education = [
 <style scoped>
 .experience-section {
   width: 100%;
-  padding: 100px 24px;
+  padding: 100px 0;
   background: var(--bg-secondary);
-}
-
-.experience-container {
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 h2 em {
@@ -297,10 +292,18 @@ h2 em {
   color: var(--text-muted);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .tl-header {
     flex-direction: column;
     gap: 4px;
+  }
+
+  .tl-item {
+    gap: 16px;
+  }
+
+  .education-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

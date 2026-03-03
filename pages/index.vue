@@ -7,7 +7,7 @@
     <ExperienceTimeline />
 
     <section class="projects-section">
-      <div class="projects-container">
+        <div class="container">
         <div class="reveal">
           <span class="section-tag">Portfólio</span>
           <h2>Projetos</h2>
@@ -47,13 +47,8 @@ onMounted(() => {
 <style>
 .projects-section {
   width: 100%;
-  padding: 100px 24px;
+  padding: 100px 0;
   background: var(--bg-tertiary);
-}
-
-.projects-container {
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .projects-grid {
@@ -70,4 +65,5 @@ onMounted(() => {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 </style>

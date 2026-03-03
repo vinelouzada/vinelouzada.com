@@ -1,6 +1,6 @@
 <template>
   <section class="latest-posts-section">
-    <div class="latest-posts-container">
+    <div class="container">
       <div class="section-header reveal">
         <div>
           <span class="section-tag">Blog</span>
@@ -37,13 +37,8 @@ const posts = await queryContent("posts").sort({'id': -1}).limit(3).find();
 <style scoped>
 .latest-posts-section {
   width: 100%;
-  padding: 100px 24px;
+  padding: 100px 0;
   background: var(--bg-primary);
-}
-
-.latest-posts-container {
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 h2 em {

@@ -10,7 +10,7 @@
       </div>
     </section>
     <section class="posts-list-section">
-      <div class="posts-container">
+      <div class="container">
         <ul class="posts-grid">
           <li v-for="post in posts" :key="post.id">
             <CardPost
@@ -87,12 +87,7 @@ useHead({
 
 .posts-list-section {
   width: 100%;
-  padding: 60px 24px 100px;
-}
-
-.posts-container {
-  max-width: 1000px;
-  margin: 0 auto;
+  padding: 60px 0 100px;
 }
 
 .posts-grid {

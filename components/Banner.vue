@@ -174,7 +174,10 @@
   50% { transform: translateY(-20px) rotate(3deg); }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
+  .hero-content {
+    width: 90%;
+  }
   .hero-stats {
     flex-direction: column;
     gap: 16px;

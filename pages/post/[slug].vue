@@ -83,8 +83,9 @@ useSeoMeta({
 
 .post-content-section {
   max-width: 720px;
+  width: 65%;
   margin: 0 auto;
-  padding: 0 24px 100px;
+  padding: 0 0 100px;
 }
 
 .post-banner {
@@ -200,7 +201,7 @@ useSeoMeta({
 
 @media (max-width: 750px) {
   .post-content-section {
-    padding: 0 16px 60px;
+    width: 90%;
   }
 
   .post-banner {

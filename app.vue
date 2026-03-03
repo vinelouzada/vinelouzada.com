@@ -84,6 +84,12 @@ main {
   max-width: 1000px;
 }
 
+.container {
+  width: 65%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 h2 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 700;
@@ -155,7 +161,8 @@ a:hover {
 }
 
 @media (max-width: 750px) {
-  .content {
+  .content,
+  .container {
     width: 90%;
   }
 }
