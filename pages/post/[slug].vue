@@ -1,21 +1,34 @@
 <template>
-      <main>
-        <section class="content-post">
-            <div class="banner-post">
-              <img :src="`/assets/img/${post.banner}`">
-            </div>
-            <article>
-                <h2>{{post.title}}</h2>
-                <ContentRendererMarkdown :value="post" />
-            </article>
-        </section>
-      </main>
+  <main>
+    <section class="post-hero">
+      <div class="post-hero-bg"></div>
+      <div class="post-hero-content">
+        <span class="section-tag">Artigo</span>
+        <h1>{{ post.title }}</h1>
+        <p class="post-meta">{{ formatDate(post.date) }}</p>
+      </div>
+    </section>
+    <section class="post-content-section">
+      <div class="post-banner" v-if="post.banner">
+        <img :src="`/assets/img/${post.banner}`" :alt="post.title">
+      </div>
+      <article class="post-article">
+        <ContentRendererMarkdown :value="post" />
+      </article>
+    </section>
+  </main>
 </template>
-  
+
 <script setup>
+import moment from 'moment';
 
 const route = useRoute()
 const post = await queryContent('posts').where({'slug': { $eq: route.params.slug }}).findOne();
+
+const formatDate = (date) => {
+  moment.locale('pt-br');
+  return moment(date).format("LL");
+};
 
 useHead({
     title: `${post.title} • vinelouzada`
@@ -28,66 +41,171 @@ useSeoMeta({
   ogDescription: `${post.description}`,
   ogImage: `/assets/img/${post.banner}`
 })
-
 </script>
-  
 
 <style>
-
-.content-post {
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  width: 50%;
-}
-
-.content-post p{
-  line-height: 1.8;
-  margin-bottom: 1em;
-}
-
-pre{
-  background-color: #141414;
-  padding: 10px;
-  border-radius: 10px;
-  overflow-x: auto;
-  margin: 10px 0;
-}
-
-.banner-post{
+.post-hero {
   width: 100%;
-  height: 200px;
-  margin-top: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 160px 24px 60px;
+  overflow: hidden;
 }
 
-.banner-post img {
+.post-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 40%, #1a1145 0%, var(--bg-primary) 100%);
+}
+
+.post-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+}
+
+.post-hero-content h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 12px 0 16px;
+  line-height: 1.2;
+}
+
+.post-meta {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.post-content-section {
+  max-width: 720px;
+  width: 65%;
+  margin: 0 auto;
+  padding: 0 0 100px;
+}
+
+.post-banner {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.post-banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-h2 a{
-  text-decoration: none;
-  color: #000;
+.post-article {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
 
-blockquote {
-  border-left: 3px solid #333;
-  padding: 12px 20px;
-  margin: 20px 0;
+.post-article p {
+  margin-bottom: 1.2em;
+  color: var(--text-secondary);
+}
+
+.post-article h2,
+.post-article h3,
+.post-article h4 {
+  color: var(--text-primary);
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+}
+
+.post-article h2 {
+  font-size: 1.6rem;
+}
+
+.post-article h3 {
+  font-size: 1.3rem;
+}
+
+.post-article a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.post-article a:hover {
+  color: var(--accent-secondary);
+}
+
+.post-article strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.post-article code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--accent);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.post-article pre {
+  background: #0d1117;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin: 24px 0;
+  border: 1px solid var(--border);
+}
+
+.post-article pre code {
+  background: none;
+  padding: 0;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.post-article blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  margin: 24px 0;
+  background: var(--bg-card);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   font-style: italic;
-  color: #444;
+  color: var(--text-secondary);
 }
 
-blockquote p {
+.post-article blockquote p {
   margin: 0;
 }
 
-@media (max-width: 750px) {
-  .content-post {
-    width: 90%;
-  }
+.post-article ul,
+.post-article ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.2em;
 }
 
+.post-article li {
+  margin-bottom: 0.5em;
+}
 
+.post-article img {
+  max-width: 100%;
+  border-radius: var(--radius-sm);
+  margin: 16px 0;
+}
+
+@media (max-width: 750px) {
+  .post-content-section {
+    width: 90%;
+  }
+
+  .post-banner {
+    height: 200px;
+  }
+}
 </style>
